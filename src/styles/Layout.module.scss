@@ -1,0 +1,14 @@
+
+.main {
+    @apply flex bg-blue-100 w-full h-screen;
+    overflow-y: hidden;
+}
+
+.content {
+    @apply flex-1;
+}
+
+.contentBody{
+    @apply w-full h-full pb-32;
+    overflow-y: auto;
+}

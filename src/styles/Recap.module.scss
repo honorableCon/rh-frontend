@@ -1,0 +1,12 @@
+.contentBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerButton{
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    margin: auto;
+}
