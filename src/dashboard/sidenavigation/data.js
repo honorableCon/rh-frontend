@@ -25,6 +25,24 @@ const data = [
     ],
   },
   {
+    section: 'Statistics',
+    icon: <StatisticsIcon />,
+    content: [
+      {
+        title: 'Finances',
+        link: '/statistics/finances',
+      },
+      {
+        title: 'Call Stats',
+        link: '/statistics/call-stats',
+      },
+      {
+        title: 'Trip Logs',
+        link: '/statistics/trip-logs',
+      },
+    ],
+  },
+  {
     section: 'Personnels',
     icon: <DocumentsIcon />,
     content: [
@@ -75,24 +93,6 @@ const data = [
       {
         title: 'University',
         link: '/pictures/university',
-      },
-    ],
-  },
-  {
-    section: 'Statistics',
-    icon: <StatisticsIcon />,
-    content: [
-      {
-        title: 'Finances',
-        link: '/statistics/finances',
-      },
-      {
-        title: 'Call Stats',
-        link: '/statistics/call-stats',
-      },
-      {
-        title: 'Trip Logs',
-        link: '/statistics/trip-logs',
       },
     ],
   },

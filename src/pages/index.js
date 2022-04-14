@@ -1,5 +1,6 @@
 import Content from '../components/content';
+import Modules from '../components/Modules';
 
 export default function HomePage() {
-  return <Content title="Home" />;
+  return <Modules/>;
 }
