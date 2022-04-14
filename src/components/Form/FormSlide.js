@@ -39,11 +39,14 @@ const FormSlide = () => {
                     setErrors(response.data.errors);
                     console.log(response.data.errors);
                     alert("Error: dans le formulaire");
+                }else{
+                    alert("Nouveau membre enregistré");
                 }
             });
     }
 
   return (
+      
     <form onSubmit={handleSubmit} ref={formRef} method="POST">
         
         {page==1 && <Employe 

@@ -6,10 +6,10 @@ const add = () => {
   return (
     <div className='my-6'>
       <Head>
-        <title>Add</title>
+        <title>Ajouter</title>
       </Head>
-        <h1 className='text-center font-bold text-2xl my-6'>FORMULAIRE EMPLOYÉ</h1>
-        <FormSlide/>
+      <h1 className='text-center font-bold text-2xl my-6'>FORMULAIRE EMPLOYÉ</h1>
+      <FormSlide/>
     </div>
   )
 }

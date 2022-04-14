@@ -1,10 +1,11 @@
-import React from 'react'
-import Header from './Header'
+import Header from './Header';
+import Body from '../../components/Effectifs/Body';
 
-const index = () => {
+const index = ({effectifs}) => {
   return (
-    <div>
+    <div className="grid gap-12">
         <Header/>
+        <Body effectifs={effectifs}/>
     </div>
   )
 }

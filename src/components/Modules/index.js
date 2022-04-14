@@ -36,7 +36,7 @@ const Modules = () => {
         Direction des Resources Humaines et de la Communication
     </h1>
     <div className="grid grid-cols-3 gap-6">
-        {data.map( item => <CardModule module={item}/>)}
+        {data.map( (item, i) => <CardModule key={i} module={item}/>)}
     </div>
     </>
   )

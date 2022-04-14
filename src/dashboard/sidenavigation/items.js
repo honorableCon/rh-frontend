@@ -5,7 +5,7 @@ import Accordion from './accordion';
 import { useRouter } from 'next/router';
 
 const style = {
-  active: `font-normal mx-4 text-sm text-blue-600`,
+  active: `font-normal mx-4 text-sm text-primary-900`,
   inactive: `font-light mx-4 text-sm text-gray-900`,
   link: `inline-flex items-center justify-start my-1 p-3 text-black`,
 };

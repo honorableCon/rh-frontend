@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useToggle } from '../provider/context';
 
 export default function TopNavigation() {
@@ -34,7 +35,7 @@ export default function TopNavigation() {
                 />
               </svg>
             </a>
-            <a href="#" className="block pr-5">
+            <Link href={"/personnels/ajouter"}><a className="block pr-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -49,7 +50,7 @@ export default function TopNavigation() {
                   d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-            </a>
+            </a></Link>
             <a href="#" className="block pr-5 relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -10,35 +10,15 @@ const data = [
     section: 'Documents',
     icon: <DocumentsIcon />,
     content: [
-      {
-        title: 'Taxes',
-        link: '/documents/taxes',
-      },
-      {
-        title: 'Travel',
-        link: '/documents/travel',
-      },
-      {
-        title: 'Insurance',
-        link: '/documents/insurance',
-      },
     ],
   },
   {
-    section: 'Statistics',
+    section: 'Statistiques',
     icon: <StatisticsIcon />,
     content: [
       {
-        title: 'Finances',
-        link: '/statistics/finances',
-      },
-      {
-        title: 'Call Stats',
-        link: '/statistics/call-stats',
-      },
-      {
-        title: 'Trip Logs',
-        link: '/statistics/trip-logs',
+        title: 'Effectif',
+        link: '/effectifs',
       },
     ],
   },
@@ -47,16 +27,20 @@ const data = [
     icon: <DocumentsIcon />,
     content: [
       {
-        title: 'Listes',
+        title: 'Lister le personnel',
         link: '/personnels/listes',
       },
       {
-        title: 'Ajouter',
+        title: 'Ajouter un employé',
         link: '/personnels/ajouter',
       },
       {
-        title: 'Insurance',
-        link: '/personnels/insurance',
+        title: 'Changer de statut',
+        link: '/personnels/changement',
+      },
+      {
+        title: 'Enregistrer un départ',
+        link: '/personnels/depart',
       },
     ],
   },
