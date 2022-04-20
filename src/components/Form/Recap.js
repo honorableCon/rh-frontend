@@ -5,6 +5,7 @@ const Recap = ({inputs, usePage}) => {
     const personnel = inputs;
     const [page, setPage] = usePage;
     const handlePrevClick = () => setPage(--page);
+    console.log(inputs);
 
     return (
         <div className={RecapStyle.contentBody}>     

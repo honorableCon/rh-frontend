@@ -32,10 +32,10 @@ const Modules = () => {
     ]
   return (
       <>
-    <h1 className="font-bold text-2xl text-center p-6">
+    <h1 className="font-mediumh text-2xl text-secondary-900 font-medium text-center p-6">
         Direction des Resources Humaines et de la Communication
     </h1>
-    <div className="grid grid-cols-3 gap-6">
+    <div className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 justify-center">
         {data.map( (item, i) => <CardModule key={i} module={item}/>)}
     </div>
     </>

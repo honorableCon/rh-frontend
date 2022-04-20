@@ -1,6 +1,6 @@
 import React from 'react'
 
-const EffectifHeadCard = ({title, total}) => {
+const EffectifHeadCard = ({title, total, totalBefore}) => {
   return (
     
 <div className="md:p-8 p-6 bg-white shadow-xl rounded-xl flex justify-between dark:bg-gray-800 md:items-center md:flex-row flex-col gap-12">
@@ -8,7 +8,7 @@ const EffectifHeadCard = ({title, total}) => {
         <span className="text-bold text-gray-700 dark:text-gray-400 block">
             Total {title}
         </span>
-        <span className="text-yellow-500 text-4xl md:text-5xl mt-2 font-black block">
+        <span className="text-primary-900 text-4xl md:text-5xl mt-2 font-black block">
             {total}
         </span>
     </div>
@@ -19,11 +19,11 @@ const EffectifHeadCard = ({title, total}) => {
                     <path d="M491 1536l91-91-235-235-91 91v107h128v128h107zm523-928q0-22-22-22-10 0-17 7l-542 542q-7 7-7 17 0 22 22 22 10 0 17-7l542-542q7-7 7-17zm-54-192l416 416-832 832h-416v-416zm683 96q0 53-37 90l-166 166-416-416 166-165q36-38 90-38 53 0 91 38l235 234q37 39 37 91z">
                     </path>
                 </svg>
-                1.2% ajouté
+                {((total - totalBefore) * 0.1).toFixed(1)}% ajouté
             </p>
         </div>
         <p className="text-lg text-gray-600 md:text-right text-left dark:text-gray-400 md:block inline-block md:mb-0">
-            mois passé (+9)
+            année passé (+{total - totalBefore})
         </p>
     </div>
 </div>

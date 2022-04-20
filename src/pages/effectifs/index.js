@@ -9,22 +9,21 @@ export default function EffectifsPage({effectifs}) {
 export const getStaticProps = async () => {
   const year = new Date().getFullYear();
   const yearBefore = parseInt(year) - 1;
-  const [permanents, permanentsBefore] = await Promise.all([
-    getPermanents(year),
-    getPermanents(yearBefore)
+  const [effectifsNow, effectifsBefore] = await Promise.all([
+    getEffectifs(year),
+    getEffectifs(yearBefore)
   ]);
     
   return {
     props: {
         effectifs : {
-          permanents,
-          permanentsBefore
+          effectifsNow,
+          effectifsBefore
         },
     }
   }
 }
-
-const getPermanents = async (year) => {
-  const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL_API}/permanents/${year}`)
+const getEffectifs = async (year) => {
+  const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL_API}/effectifs/${year}`)
   return response.data
 }

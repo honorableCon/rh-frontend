@@ -8,6 +8,7 @@ export const options = {
     subtitle: "Effectifs des intérimaires: 2022-2021",
     legend: { position: 'none' },
   },
+  colors : ["#7c4b08", "#ee820f"],
 };
 
 export default function ChartInterimaireEffectifs({effectifInterimaires}) {

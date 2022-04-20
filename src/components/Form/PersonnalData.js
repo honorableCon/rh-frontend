@@ -9,7 +9,10 @@ const Employe = ({useInputs, usePage, formRef, errors}) => {
   
   const handleNextClick = (e) => {
     const data = new FormData(formRef.current);
-    setInputs(Object.fromEntries(data.entries()));
+    setInputs({
+      ...inputs, 
+      ...Object.fromEntries(data.entries())
+    });
     setPage(++page);
   }
   

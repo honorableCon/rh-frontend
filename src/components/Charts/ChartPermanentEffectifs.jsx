@@ -3,18 +3,19 @@ import { Chart } from "react-google-charts";
 
 
 export default function ChartPermanentEffectifs({effectifs}) {
-  const {permanents, permanentsBefore} = effectifs;
+  const {effectifsNow, effectifsBefore} = effectifs;
   const options = {
     chart: {
       title: "Effectif permanents",
-      subtitle: `CDD, CDI, et Stage: ${permanents.year} et ${permanentsBefore.year}`,
+      subtitle: `CDD, CDI, et Stage: ${effectifsNow.year} et ${effectifsBefore.year}`,
     },
+    colors : ["#7c4b08", "#ee820f"],
   };
   const data = [
-    ["", `${permanents.year}`, `${permanentsBefore.year}`],
-    ["CDD", permanents.CDD, permanentsBefore.CDD],
-    ["CDI", permanents.CDI, permanentsBefore.CDI],
-    ["Stage", permanents.Stage, permanentsBefore.Stage],
+    ["", `${effectifsNow.year}`, `${effectifsBefore.year}`],
+    ["CDD", effectifsNow.cdd, effectifsBefore.cdd],
+    ["CDI", effectifsNow.cdi, effectifsBefore.cdi],
+    ["Stage", effectifsNow.stage, effectifsBefore.stage],
   ];
 
   return (
