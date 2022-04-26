@@ -5,16 +5,18 @@ import { Chart } from "react-google-charts";
 export default function ChartStagiaireEffectifs({effectifs}) {
   const {permanents, permanentsBefore} = effectifs;
   const data = [
-    ["City", "Durée en mois", "Nombre de stagiaires"],
-    ["New York City, NY", 12, 8],
-    ["Los Angeles, CA", 37, 36],
-    ["Chicago, IL", 26, 28],
-    ["Houston, TX", 20, 19],
-    ["Philadelphia, PA", 15, 15],
+    ["", "Durée en mois", "Nombre de stagiaires"],
+    ["Sécretariat", 2, 8],
+    ["QHSE", 1, 2],
+    ["Centre de Formation", 3, 1],
+    ["Maintenance", 20, 19],
+    ["Laboratoire", 12, 3],
+    ["Ressources Humaines", 12, 30],
+    ["Comptabilité", 15, 36],
   ];
   
   const options = {
-    title: "Population of Largest U.S. Cities",
+    title: "Répartition des stagiaires",
     chartArea: { width: "60%" },
     colors : ["#7c4b08", "#ee820f"],
     hAxis: {

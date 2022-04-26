@@ -17,8 +17,16 @@ const data = [
     icon: <StatisticsIcon />,
     content: [
       {
-        title: 'Effectif',
-        link: '/effectifs',
+        title: 'Effectif Total',
+        link: '/statistiques/effectifs',
+      },
+      {
+        title: 'Repartition des effectifs',
+        link: '/statistiques/repartition-effectifs',
+      },
+      {
+        title: 'Promotions effectuées',
+        link: '/statistiques/promotion-effectuees',
       },
     ],
   },
