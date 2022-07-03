@@ -7,7 +7,7 @@ const Modules = () => {
         {
             title:"Gestion de l'organisation et des effectifs",
             profile:"Build.svg",
-            link:"/effectifs"
+            link:"/statistiques/effectifs"
         },{
             title:"Politique de remuneration et d'action sociale",
             profile:"Loan.svg",
@@ -31,7 +31,7 @@ const Modules = () => {
         }
     ]
   return (
-      <>
+    <>
     <h1 className="font-mediumh text-2xl text-secondary-900 font-medium text-center p-6">
         Direction des Resources Humaines et de la Communication
     </h1>

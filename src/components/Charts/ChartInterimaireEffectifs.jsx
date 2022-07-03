@@ -1,5 +1,7 @@
 import React from 'react';
 import { Chart } from "react-google-charts";
+import Container from '../UIElements/Container';
+import ApexChart from './ApexChart.tsx';
 
 
 export const options = {
@@ -12,32 +14,60 @@ export const options = {
 };
 
 export default function ChartInterimaireEffectifs({effectifInterimaires}) {
-  const data = [
-    ["", "2022", "2021"],
-    ["Janvier", 129, 92],
-    ["Fevrier", 144, 122],
-    ["Mars", 176, 135],
-    ["Avril", 135, 148],
-    ["Mai", 148, 216],
-    ["Juin", 216, 194],
-    ["Juillet", 194, 95],
-    ["Aout", 95, 54],
-    ["Septembre", 54, 38],
-    ["Octobre", 38, 19],
-    ["Novembre", 19, 12],
-    ["Decembre", 12, 5]
-  ];
+  const [state, setState] = React.useState({
+    series: [{
+      name: 'Net Profit',
+      data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 23, 44]
+    }, {
+      name: 'Free Cash Flow',
+      data: [35, 41, 36, 26, 45, 48, 52, 53, 41, 36, 26]
+    }],
+    options: {
+      chart: {
+        type: 'bar',
+        height: 350
+      },
+      colors:['#7c4b08', '#ee820f'],
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: '40%',
+          endingShape: 'rounded'
+        },
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        show: true,
+        width: 2,
+        colors: ['transparent']
+      },
+      xaxis: {
+        categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Sep', 'Dec'],
+      },
+      yaxis: {
+        title: {
+          text: '$ (thousands)'
+        }
+      },
+      fill: {
+        opacity: 1
+      },
+      tooltip: {
+        y: {
+          formatter: function (val) {
+            return "$ " + val + " thousands"
+          }
+        }
+      }
+    },
+  });
 
   return (
-    <div className="p-6 flex flex-col justify-center min-w-0 break-words bg-white mb-6 shadow-lg rounded-xl">
-        <Chart
-            chartType="Bar"
-            width="95%"
-            height="400px"
-            data={data}
-            options={options}
-        />
-    </div>
-    );
+    <Container>
+      <ApexChart options={state.options} series={state.series} type="bar" heighzt={350} />
+    </Container>
+  );
   
 }

@@ -1,5 +1,3 @@
-import axios from 'axios';
-import React from 'react'
 import PersonnelCard from './PersonnelCard';
 
 const PersonnelList = ({personnel}) => {

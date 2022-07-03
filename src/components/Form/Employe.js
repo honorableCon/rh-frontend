@@ -2,7 +2,6 @@ import React, {useState, useRef} from 'react';
 import ErrorHelper from './ErrorHelper';
 
 
-
 const Employe = ({useInputs, usePage, formRef, errors}) => {
   const [inputs, setInputs] = useInputs;
   const [page, setPage] = usePage;
@@ -37,8 +36,8 @@ const Employe = ({useInputs, usePage, formRef, errors}) => {
       </div>
       <div className="relative z-0 mb-4 w-full group">
         <label htmlFor="personnel_prenom" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Téléphone</label>
-        <input name="tel" type="tel" defaultValue={inputs.tel} id="personnel_prenom" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+221 77 123 45 67" required/>
-        {errors && errors.hasOwnProperty("tel") && <ErrorHelper error={errors['tel']}/>}
+        <input name="telephone" type="tel" defaultValue={inputs.telephone} id="personnel_prenom" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+221 77 123 45 67" required/>
+        {errors && errors.hasOwnProperty("telephone") && <ErrorHelper error={errors['telephone']}/>}
       </div>
       <div className="grid lg:grid-cols-3 lg:gap-4">
         <div className="relative z-0 mb-4 w-full group">
@@ -64,20 +63,20 @@ const Employe = ({useInputs, usePage, formRef, errors}) => {
       <div className="grid lg:grid-cols-3 lg:gap-6">
         <div className="relative z-0 mb-4 w-full group">
           <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Situation matrimoniale</label>
-          <select id="countries" name="matrimoniale" defaultValue={inputs.matrimoniale} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <select id="countries" defaultValue={inputs.matrimoniale} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             <option>Marié</option>
             <option>Celibataire</option>
           </select>        
         </div>
         <div className="relative z-0 mb-4 w-full group">
           <label htmlFor="personnel_enfant" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Enfant</label>
-          <input name="enfant" type="number" defaultValue={inputs.enfant} id="personnel_enfant" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
-          {errors && errors.hasOwnProperty("enfant") && <ErrorHelper error={errors['enfant']}/>}
+          <input name="nombreEnfant" type="number" defaultValue={inputs.nombreEnfant} id="personnel_enfant" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+          {errors && errors.hasOwnProperty("nombreEnfant") && <ErrorHelper error={errors['nombreEnfant']}/>}
         </div>
         <div className="relative z-0 mb-4 w-full group">
           <label htmlFor="personnel_conjoint" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Conjoint</label>
-          <input name="conjoint" type="number" defaultValue={inputs.conjoint}  id="personnel_conjoint" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
-          {errors && errors.hasOwnProperty("conjoint") && <ErrorHelper error={errors['conjoint']}/>}
+          <input name="nombreConjoint" type="number" defaultValue={inputs.nombreConjoint}  id="personnel_conjoint" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+          {errors && errors.hasOwnProperty("nombreConjoint") && <ErrorHelper error={errors['nombreConjoint']}/>}
         </div>
       </div>
 

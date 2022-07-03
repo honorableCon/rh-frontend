@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
 import DashboardLayout from '../dashboard/layout';
+import { ApolloProvider } from '@apollo/client';
+import { client } from '../toolbox/graphql';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -8,9 +10,11 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Ressource humaine</title>
       </Head>
+      <ApolloProvider client={client}>
       <DashboardLayout>
         <Component {...pageProps} />
       </DashboardLayout>
+      </ApolloProvider>
     </>
   );
 }

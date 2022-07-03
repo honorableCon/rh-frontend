@@ -1,11 +1,9 @@
-import React from 'react'
 import RecapStyle from '../../styles/Recap.module.scss';
 
 const Recap = ({inputs, usePage}) => {
     const personnel = inputs;
     const [page, setPage] = usePage;
     const handlePrevClick = () => setPage(--page);
-    console.log(inputs);
 
     return (
         <div className={RecapStyle.contentBody}>     
@@ -33,7 +31,7 @@ const Recap = ({inputs, usePage}) => {
                                     </div>
                                     <div className="grid grid-cols-2">
                                         <div className="px-4 py-2 font-semibold">Téléphone</div>
-                                        <div className="px-4 py-2">{personnel.tel}</div>
+                                        <div className="px-4 py-2">{personnel.telephone}</div>
                                     </div>
                                     <div className="grid grid-cols-2">
                                         <div className="px-4 py-2 font-semibold">Nationalité</div>
@@ -72,23 +70,27 @@ const Recap = ({inputs, usePage}) => {
                                     <h2 className="text-center text-2xl font-bold py-sm">Contrat</h2>
                                     <div className="grid grid-cols-2">
                                         <div className="px-4 py-2 font-semibold">Statut</div>
-                                        <div className="px-4 py-2">{personnel.statut}</div>
+                                        <div className="px-4 py-2">{personnel.statuts}</div>
                                     </div>
                                     <div className="grid grid-cols-2">
                                         <div className="px-4 py-2 font-semibold">Filière</div>
-                                        <div className="px-4 py-2">{personnel.filiere}</div>
+                                        <div className="px-4 py-2">{personnel.filieres}</div>
                                     </div>
                                     <div className="grid grid-cols-2">
                                         <div className="px-4 py-2 font-semibold">Date de debut</div>
-                                        <div className="px-4 py-2">{personnel.debut}</div>
+                                        <div className="px-4 py-2">{personnel.dateDebut}</div>
                                     </div>
                                     <div className="grid grid-cols-2">
                                         <div className="px-4 py-2 font-semibold">Date de fin</div>
-                                        <div className="px-4 py-2">{personnel.fin}</div>
+                                        <div className="px-4 py-2">{personnel.dateFin}</div>
                                     </div>
                                     <div className="grid grid-cols-2">
                                         <div className="px-4 py-2 font-semibold">Type de contrat</div>
-                                        <div className="px-4 py-2">{personnel.typeContrat}</div>
+                                        <div className="px-4 py-2">{personnel.typeContrats}</div>
+                                    </div>
+                                    <div className="grid grid-cols-2">
+                                        <div className="px-4 py-2 font-semibold">Fonction</div>
+                                        <div className="px-4 py-2">{personnel.fonctions}</div>
                                     </div>
                                 </div>
                             </div>

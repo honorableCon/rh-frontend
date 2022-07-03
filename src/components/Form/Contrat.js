@@ -7,10 +7,10 @@ const Contrat = ({useInputs, usePage, contrats, formRef, errors}) => {
   const [inputs, setInputs] = useInputs;
   const [page, setPage] = usePage;
   let useIds = React.useState({
-    "filiereId" : contrats['filiere'][0].id,
-    "fonctionId" : contrats['fonction'][0].id,
-    "typeContratId" : contrats['typeContrat'][0].id,
-    "statutId" : contrats['statut'][0].id,
+    "filiereId" : contrats['filieres'][0].id,
+    "fonctionId" : contrats['fonctions'][0].id,
+    "typeContratId" : contrats['typeContrats'][0].id,
+    "statutId" : contrats['statuts'][0].id,
   });
 
   const handleNextClick = () => {
@@ -22,24 +22,24 @@ const Contrat = ({useInputs, usePage, contrats, formRef, errors}) => {
   return (   
     <div className='w-2/4 mx-auto'>
       <SelectInput contrats={contrats} useIds={useIds} inputs={inputs} 
-        sections={"typeContrat"} label={"Type de contrat"}/>
+        sections={"typeContrats"} label={"Type de contrat"}/>
       <SelectInput contrats={contrats} useIds={useIds} inputs={inputs} 
-        sections={"filiere"} label={"Filière"}/>
+        sections={"filieres"} label={"Filière"}/>
       <SelectInput contrats={contrats} useIds={useIds} inputs={inputs} 
-        sections={"fonction"} label={"Fonction"}/>
+        sections={"fonctions"} label={"Fonction"}/>
       <SelectInput contrats={contrats} useIds={useIds} inputs={inputs} 
-        sections={"statut"} label={"Statut"}/>
+        sections={"statuts"} label={"Statut"}/>
 
       <div className="grid lg:grid-cols-2 lg:gap-6">
         <div className="relative z-0 mb-6 w-full group">
           <label htmlFor="personnel_naissance" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Date de début</label>
-          <input type="date" name="debut" defaultValue={inputs.debut} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
-          {errors && errors.hasOwnProperty("debut") && <ErrorHelper error={errors['debut']}/>}
+          <input type="date" name="dateDebut" defaultValue={inputs.dateDebut} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+          {errors && errors.hasOwnProperty("dateDebut") && <ErrorHelper error={errors['dateDebut']}/>}
         </div>
         <div className="relative z-0 mb-6 w-full group">
           <label htmlFor="personnel_naissance" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Date de fin</label>
-          <input type="date" name="fin" defaultValue={inputs.fin} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
-          {errors && errors.hasOwnProperty("debut") && <ErrorHelper error={errors['debut']}/>}
+          <input type="date" name="dateFin" defaultValue={inputs.dateFin} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+          {errors && errors.hasOwnProperty("dateFin") && <ErrorHelper error={errors['dateFin']}/>}
         </div>
       </div>
 

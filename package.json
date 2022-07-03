@@ -28,10 +28,15 @@
     "format": "prettier '*/**/*.{js,jsx}' --write"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
     "@reach/portal": "^0.16.0",
     "axios": "^0.26.1",
+    "graphql": "^16.5.0",
+    "graphql-request": "^4.3.0",
+    "joi": "^17.6.0",
     "next": "^12.0.7",
     "react": "^17.0.2",
+    "react-apexcharts": "^1.4.0",
     "react-dom": "^17.0.2",
     "react-google-charts": "^4.0.0",
     "sass": "^1.50.0"

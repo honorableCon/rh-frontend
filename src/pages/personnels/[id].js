@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from 'axios';
+import Request from '../../toolbox/request';
 
 const Details = ({personnel}) => {
     return (
@@ -100,15 +100,14 @@ const Details = ({personnel}) => {
 
 
 export const getStaticProps = async ({params}) => {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL_API}/personnels/${params.id}`);
-    const personnel = await res.data;
+    const personnel = await Request.getPersonnel(params.id);
     
     return { props: {personnel} }
 }
 
 export const getStaticPaths = async () => {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL_API}/personnels`);
-    const personnels = res.data.personnels;
+    const response = await Request.getAllPersonnels();
+    const personnels = response.data.personnels;
     const paths = personnels.map(personnel => `/personnel/${personnel.id}`);
     return { paths, fallback: false }
 }

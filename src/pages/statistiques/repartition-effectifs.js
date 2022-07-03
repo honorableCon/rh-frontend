@@ -1,9 +1,12 @@
 import React from 'react'
+import Bar from '../../components/Charts/BarChartWithApex.tsx'
+import Bar01 from '../../components/Charts/BarChartWithApex01.tsx'
 
 const repartitionEffectifs = () => {
   return (
     <div>
-        <h1>repartitionEffectifs</h1>
+        <Bar/>
+        <Bar01/>
     </div>
   )
 }
