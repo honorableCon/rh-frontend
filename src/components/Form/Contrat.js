@@ -22,13 +22,13 @@ const Contrat = ({useInputs, usePage, contrats, formRef, errors}) => {
   return (   
     <div className='w-2/4 mx-auto'>
       <SelectInput contrats={contrats} useIds={useIds} inputs={inputs} 
-        sections={"typeContrats"} label={"Type de contrat"}/>
+        sections={"typeContrats"} sectionsId={"typeContratId"} label={"Type de contrat"}/>
       <SelectInput contrats={contrats} useIds={useIds} inputs={inputs} 
-        sections={"filieres"} label={"Filière"}/>
+        sections={"filieres"} sectionsId={"filiereId"} label={"Filière"}/>
       <SelectInput contrats={contrats} useIds={useIds} inputs={inputs} 
-        sections={"fonctions"} label={"Fonction"}/>
+        sections={"fonctions"} sectionsId={"fonctionId"} label={"Fonction"}/>
       <SelectInput contrats={contrats} useIds={useIds} inputs={inputs} 
-        sections={"statuts"} label={"Statut"}/>
+        sections={"statuts"} sectionsId={"statutId"} label={"Statut"}/>
 
       <div className="grid lg:grid-cols-2 lg:gap-6">
         <div className="relative z-0 mb-6 w-full group">

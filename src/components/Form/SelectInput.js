@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-const SelectInput = ({contrats, sections, label, useIds, inputs}) => {
+const SelectInput = ({contrats, sections, sectionsId, label, useIds, inputs}) => {
   const [ids, setIds] = useIds;
 
   const handleChange = (e) => {
     const idSelectedElement = e.target.selectedIndex;
     const dataId = e.target.options[idSelectedElement].dataset.id;
-    setIds({...ids, [sections+"Id"]: dataId});
+    setIds({...ids, [sectionsId]: dataId});
   }
 
   return (

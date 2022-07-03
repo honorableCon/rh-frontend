@@ -83,7 +83,7 @@ const Employe = ({useInputs, usePage, formRef, errors}) => {
       <div className="grid xls:grid-cols-2 xls:gap-6">
         <div className="relative z-0 mb-4 w-full group">
           <label htmlFor="personnel_nom" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Numéro CNI ou Passport</label>
-          <input name="cni" type="number" defaultValue={inputs.cni}  id="personnel_nom" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='1 777 1987 8965 33' required/>
+          <input name="cni" type="text" defaultValue={inputs.cni}  id="personnel_nom" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='1 777 1987 8965 33' required/>
         </div>
       </div>
       <button

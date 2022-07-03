@@ -5,6 +5,8 @@ import Contrat from '../../components/Form/Contrat';
 import Recap from '../../components/Form/Recap';
 import { getAllContrats, addPersonnel } from '../../toolbox/graphql';
 import { personnelSchema } from '../../toolbox/validator';
+import ToastSuccess from '../../components/UIElements/ToastSuccess';
+import ToastFailed from '../../components/UIElements/ToastFailed';
 
 const add = ({data}) => {
   const [inputs, setInputs] = useState({
@@ -23,12 +25,12 @@ const add = ({data}) => {
   const formRef = useRef(null);
   const [page, setPage] = useState(1);
   const [contrats, setContrats] = useState(null);
-  const [errors, setErrors] = useState({});
+  const [{errors, success, personnelId}, setQueryResult] = useState({errors:null, success:false});
   
   useEffect(() => {
     setContrats(data);
   }, [data]);
- 
+
   const handleSubmit = (e) => {
       e.preventDefault();
       errors = {};
@@ -42,17 +44,15 @@ const add = ({data}) => {
       }
 
       if (error) {
-        console.log(error);
         for(let i in error.details){
           errors[error.details[i].context.key] = error.details[i].message;
         }
-        setErrors(errors);
-        alert('Des erreurs dans le formulaire')
+        setQueryResult({errors:errors, success:false});
+        setPage(1);
         return;
       }else{
-        setErrors({});
-        addPersonnel(value).then( () => {
-          alert('Success');
+        addPersonnel(value).then( (res) => {
+          setQueryResult({errors:null, success:true, personnelId:res.data.personnel.id});
         })
       }
   }
@@ -84,6 +84,12 @@ const add = ({data}) => {
             usePage={[page, setPage]}
           />
         }
+        {success && <ToastSuccess 
+            idPersonnel={personnelId}
+            message="Personnel ajouté avec succès"
+          />
+        }
+        {errors && <ToastFailed/>}
       </form>
     </div>
   )
