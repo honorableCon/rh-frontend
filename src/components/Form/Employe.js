@@ -46,7 +46,7 @@ const Employe = ({useInputs, usePage, formRef, errors}) => {
         </div>
         <div className="relative z-0 mb-4 w-full group">
         <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Sexe</label>
-          <select id="countries" name='sexe' defaultValue={inputs.sexe} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <select id="sexes" name='sexe' defaultValue={inputs.sexe} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             <option>Femme</option>
             <option>Homme</option>
           </select>   
@@ -87,7 +87,7 @@ const Employe = ({useInputs, usePage, formRef, errors}) => {
         </div>
       </div>
       <button
-        type="button" onClick={handleNextClick} className="text-white bg-secondary-900 hover:bg-secondary-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        type="button" onClick={handleNextClick} className="next-btn text-white bg-secondary-900 hover:bg-secondary-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
         Suivant
       </button>
     </div>

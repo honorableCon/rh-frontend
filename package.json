@@ -25,7 +25,8 @@
     "start": "next start",
     "lint": "next lint && eslint '*/**/*.{js,jsx}' --fix",
     "prepare": "husky install",
-    "format": "prettier '*/**/*.{js,jsx}' --write"
+    "format": "prettier '*/**/*.{js,jsx}' --write",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
