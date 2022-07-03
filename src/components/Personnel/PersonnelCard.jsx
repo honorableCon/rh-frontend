@@ -4,7 +4,7 @@ import React from 'react'
 
 const PersonnelCard = ({personnel}) => {
   return (
-      <Link href={`/personnel/[id]`} as={`/personnel/${personnel.id}`} passHref>
+      <Link href={`/personnel/details?id=${personnel.id}`} as={`/personnel/${personnel.id}`} passHref>
         <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md">
         <div className="flex justify-end px-4 pt-4">
             <button id="dropdownButton" data-dropdown-toggle="dropdown" className="hidden sm:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5" type="button">
@@ -26,7 +26,7 @@ const PersonnelCard = ({personnel}) => {
             </div>
         </div>
         <div className="flex flex-col items-center pb-10">
-            <img className="mb-3 w-24 h-24 rounded-full shadow-lg" src="/images/profil.jpeg" alt="Bonnie"/>
+            <img className="mb-3 w-24 h-24 rounded-full shadow-lg" src="https://www.freeiconspng.com/thumbs/profile-icon-png/am-a-19-year-old-multimedia-artist-student-from-manila--21.png" alt="Bonnie"/>
             <h5 className="mb-1 text-xl font-medium text-gray-900">
                 {troncatetext(`${personnel.prenom} ${personnel.nom}`, 20)}
             </h5>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Request from '../../toolbox/request';
+import Request from '../../request';
 
 const Details = ({personnel}) => {
     return (

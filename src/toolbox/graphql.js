@@ -46,3 +46,106 @@ export const addPersonnel = async (personnel) => {
     })
     return response
 }
+
+
+export const getAllFilieres = async () => {
+    const response = await client.query({
+        query: gql`
+            query getAllFilieres{
+                filieres{
+                    id
+                    libelle
+                }
+            }
+        `
+    })
+    return response
+}
+
+
+export const getAllPersonnels = async () => {
+    const response = await client.query({
+        query: gql`
+            query getAllPersonnels{
+                personnels{
+                    id
+                    nom
+                    prenom
+                    dateDeNaissance
+                    sexe
+                    cni
+                    nationalite
+                    email
+                    telephone
+                    nombreConjoint
+                    nombreEnfant
+                }
+            }
+        `
+    })
+    return response
+}
+
+
+export const GET_PERSONNELS = gql`
+    query getAllPersonnels{
+        personnels{
+            id
+            nom
+            prenom
+            dateDeNaissance
+            sexe
+            cni
+            nationalite
+            email
+            telephone
+            nombreConjoint
+            nombreEnfant
+        }
+    }
+`
+
+export const GET_PERSONNEL = gql`
+    query getPersonnel($id: ID!){
+        personnel(id: $id){
+            id
+            nom
+            prenom
+            dateDeNaissance
+            sexe
+            cni
+            nationalite
+            email
+            telephone
+            nombreConjoint
+            nombreEnfant
+        }
+    }
+`
+
+export const getAllAnnuairesData = async () => {
+    const response = await client.query({
+        query: gql`
+            query getAllAnnuairesData{
+                personnels{
+                    id
+                    nom
+                    prenom
+                    dateDeNaissance
+                    sexe
+                    cni
+                    nationalite
+                    email
+                    telephone
+                    nombreConjoint
+                    nombreEnfant
+                }
+                filieres{
+                    id
+                    libelle
+                }
+            }
+        `
+    })
+    return response
+}
