@@ -35,8 +35,8 @@ const data = [
     icon: <DocumentsIcon />,
     content: [
       {
-        title: 'Lister le personnel',
-        link: '/personnels/listes',
+        title: 'Annuaire des personnels',
+        link: '/personnels/annuaire',
       },
       {
         title: 'Ajouter un employé',
