@@ -63,11 +63,11 @@ export const getAllFilieres = async () => {
 }
 
 
-export const getAllPersonnels = async () => {
+export const getPersonnel = async (id) => {
     const response = await client.query({
         query: gql`
-            query getAllPersonnels{
-                personnels{
+            query getPersonnel($id: ID!){
+                personnelById(id: $id){
                     id
                     nom
                     prenom
@@ -81,7 +81,7 @@ export const getAllPersonnels = async () => {
                     nombreEnfant
                 }
             }
-        `
+        `, variables: {id}
     })
     return response
 }

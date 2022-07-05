@@ -1,5 +1,5 @@
 import React from 'react'
-import Request from '../../request';
+import { getPersonnel } from '../../toolbox/graphql'
 
 const Details = ({personnel}) => {
     return (
@@ -98,18 +98,14 @@ const Details = ({personnel}) => {
     )
 }
 
-
-export const getStaticProps = async ({params}) => {
-    const personnel = await Request.getPersonnel(params.id);
-    
-    return { props: {personnel} }
-}
-
-export const getStaticPaths = async () => {
-    const response = await Request.getAllPersonnels();
-    const personnels = response.data.personnels;
-    const paths = personnels.map(personnel => `/personnel/${personnel.id}`);
-    return { paths, fallback: false }
-}
-
 export default Details
+
+export const getServerSideProps = async (ctx) => {
+    const {data} = await getPersonnel(ctx.query.id);
+    
+    return {
+        props: {
+            personnel: data.personnelById
+        }
+    }
+}
