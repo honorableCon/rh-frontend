@@ -1,9 +1,8 @@
 import PersonnelList from '../../components/Personnel/PersonnelList';
 import SearchBar from '../../components/Personnel/SearchBar';
-import { getAllAnnuairesData, getAllFilieres } from '../../toolbox/graphql';
+import { getAllAnnuairesData } from '../../toolbox/graphql';
 
-const annuaire = ({filieres, personnels}) => {
-
+const Annuaire = ({filieres, personnels}) => {
   return (
     <div className='m-6 flex-row justify-center'>
       <div>
@@ -14,7 +13,7 @@ const annuaire = ({filieres, personnels}) => {
   )
 }
 
-export default annuaire;
+export default Annuaire;
 
 export async function getServerSideProps() {
   const { data } = await getAllAnnuairesData();
