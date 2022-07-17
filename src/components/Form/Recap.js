@@ -1,4 +1,6 @@
 import RecapStyle from '../../styles/Recap.module.scss';
+import DetailAbout from '../DetailsEmployee/DetailAbout';
+import DetailContrat from '../DetailsEmployee/DetailContrat';
 
 const Recap = ({inputs, usePage}) => {
     const personnel = inputs;
@@ -11,95 +13,13 @@ const Recap = ({inputs, usePage}) => {
                 <div className="md:flex no-wrap md:-mx-2 gap-10">
                     {/* <!-- Left Side --> */}
                     <div className="w-full mx-2 h-64">
-                        {/* <!-- Profile tab --> */}
-                        {/* <!-- About Section --> */}
-                        <div className="bg-white p-3 rounded-lg shadow-lg">
-                            
-                            <div className="text-gray-700">
-                                <div className="grid md:grid-cols-1 text-sm">
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Prenom</div>
-                                        <div className="px-4 py-2">{personnel.prenom}</div>
-                                    </div>
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Nom</div>
-                                        <div className="px-4 py-2">{personnel.nom}</div>
-                                    </div>
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Sexe</div>
-                                        <div className="px-4 py-2">{personnel.sexe}</div>
-                                    </div>
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Téléphone</div>
-                                        <div className="px-4 py-2">{personnel.telephone}</div>
-                                    </div>
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Nationalité</div>
-                                        <div className="px-4 py-2">{personnel.nationalite}</div>
-                                    </div>
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Situation matrimoniale</div>
-                                        <div className="px-4 py-2">{personnel.matrimoniale}</div>
-                                    </div>
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Email.</div>
-                                        <div className="px-4 py-2">
-                                            <a className="text-blue-800" href="mailto:jane@example.com">{personnel.email}</a>
-                                        </div>
-                                    </div>
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Date de naissance</div>
-                                        <div className="px-4 py-2">{personnel.dateDeNaissance}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* <!-- End of about section --> */}
-
-                        <div className="my-4">
-                        </div>
-                        {/* <!-- End of profile tab --> */}
+                        <DetailAbout personnel={personnel}/>
+                        <div className="my-4"></div>
                     </div>
                     {/* <!-- Right Side --> */}
                     <div className="w-full mx-2 h-64">
-                        {/* <!-- Profile tab --> */}
-                        {/* <!-- About Section --> */}
-                        <div className="bg-white p-3 rounded-lg shadow-lg">
-                            <div className="text-gray-700">
-                                <div className="grid md:grid-cols-1 text-sm">
-                                    <h2 className="text-center text-2xl font-bold py-sm">Contrat</h2>
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Statut</div>
-                                        <div className="px-4 py-2">{personnel.statuts}</div>
-                                    </div>
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Filière</div>
-                                        <div className="px-4 py-2">{personnel.filieres}</div>
-                                    </div>
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Date de debut</div>
-                                        <div className="px-4 py-2">{personnel.dateDebut}</div>
-                                    </div>
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Date de fin</div>
-                                        <div className="px-4 py-2">{personnel.dateFin}</div>
-                                    </div>
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Type de contrat</div>
-                                        <div className="px-4 py-2">{personnel.typeContrats}</div>
-                                    </div>
-                                    <div className="grid grid-cols-2">
-                                        <div className="px-4 py-2 font-semibold">Fonction</div>
-                                        <div className="px-4 py-2">{personnel.fonctions}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* <!-- End of about section --> */}
-
-                        <div className="my-4">
-                        </div>
-                        {/* <!-- End of profile tab --> */}
+                        <DetailContrat personnel={personnel}/>
+                        <div className="my-4"></div>
                     </div>
                 </div>
             </div>

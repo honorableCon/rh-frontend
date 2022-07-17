@@ -79,6 +79,31 @@ export const getPersonnel = async (id) => {
                     telephone
                     nombreConjoint
                     nombreEnfant
+                    contrats{
+                        debutContrat
+                        finContrat
+                        etat
+                        statut{
+                            id
+                            libelle
+                        }
+                        typeContrat{
+                            id
+                            libelle
+                        }
+                    }
+                    personnelFonctions{
+                        fonction{
+                            id
+                            libelle
+                        }
+                    }
+                    integrationFilieres{
+                        filiere{
+                            id
+                            libelle
+                        }
+                    }
                 }
             }
         `, variables: {id}
