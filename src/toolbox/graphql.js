@@ -47,6 +47,21 @@ export const addPersonnel = async (personnel) => {
     return response
 }
 
+export const deletePersonnel = async (id) => {
+    const response = await client.mutate({
+        mutation: gql`
+            mutation ($id: ID!){
+                deletePersonnel(id: $id){
+                    id
+                }
+            }
+        `,
+        variables: {
+            id
+        }
+    })
+    return response
+}
 
 export const getAllFilieres = async () => {
     const response = await client.query({

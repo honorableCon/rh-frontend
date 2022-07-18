@@ -16,7 +16,7 @@ export default ({personnel, contrat, fonction}) => (
                 </span>
             </li>
             <li className="flex items-center py-3">
-                <span>Date d'embauche</span>
+                <span>Membre depuis</span>
                 <span className="ml-auto">{contrat.debutContrat}</span>
             </li>
         </ul>
