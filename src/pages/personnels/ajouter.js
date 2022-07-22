@@ -7,6 +7,7 @@ import { getAllContrats, addPersonnel } from '../../toolbox/graphql';
 import { personnelSchema } from '../../toolbox/validator';
 import ToastSuccess from '../../components/UIElements/ToastSuccess';
 import ToastFailed from '../../components/UIElements/ToastFailed';
+// import { useNavigation } from 'next/router'
 
 const add = ({data}) => {
   const [inputs, setInputs] = useState({
@@ -25,7 +26,8 @@ const add = ({data}) => {
   const formRef = useRef(null);
   const [page, setPage] = useState(1);
   const [contrats, setContrats] = useState(null);
-  const [{errors, success, personnelId}, setQueryResult] = useState({errors:null, success:false});
+  const [queryResult, setQueryResult] = useState({errors:null, success:false});
+  const {errors, success, personnelId} = queryResult;
   
   useEffect(() => {
     setContrats(data);
@@ -50,13 +52,19 @@ const add = ({data}) => {
         setQueryResult({errors:errors, success:false});
         setPage(1);
         return;
-      }else{
-        addPersonnel(value).then( (res) => {
-          setQueryResult({errors:null, success:true, personnelId:res.data.personnel.id});
-        })
       }
+
+      setQueryResult({...queryResult, success:false});
+
+      addPersonnel(value).then( (res) => {
+        setQueryResult({errors:null, success:true, personnelId:res.data.personnel.id});
+      })
   }
 
+  const handleCloseSuccess = () =>{
+    // close and go to annuaires
+    console.log("close and go to annuaire");
+  }
   return (
     <div className='my-6'>
       <Head>
@@ -87,9 +95,13 @@ const add = ({data}) => {
         {success && <ToastSuccess 
             idPersonnel={personnelId}
             message="Personnel ajouté avec succès"
+            isClose={!success}
+            closeMethod={handleCloseSuccess}
           />
         }
-        {errors && <ToastFailed/>}
+        {/* {errors && <ToastFailed
+          isClose={errors}
+        />} */}
       </form>
     </div>
   )

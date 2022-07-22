@@ -13,7 +13,7 @@ export const options = {
   colors : ["#7c4b08", "#ee820f"],
 };
 
-export default function ChartInterimaireEffectifs({effectifInterimaires}) {
+export default function ChartInterimaireEffectifs() {
   const [state, setState] = React.useState({
     series: [{
       name: 'Net Profit',

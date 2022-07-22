@@ -4,8 +4,8 @@ import Body from '../../components/Effectifs/Body';
 const index = ({effectifs}) => {
   return (
     <div className="grid gap-12">
-        <Header effectifs={effectifs}/>
-        <Body effectifs={effectifs}/>
+        <Header/>
+        <Body/>
     </div>
   )
 }

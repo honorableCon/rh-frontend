@@ -27,8 +27,8 @@ describe('Ajouter un personnel', () => {
       cy.get('#typeContrats').select("CDI");
       cy.get('#fonctions').select(4);
       cy.get('#statuts').select(3);
-      cy.get('input[name="dateDebut"]').type('2020-01-01');
-      cy.get('input[name="dateFin"]').type('2021-01-01');
+      cy.get('input[name="dateDebut"]').type('2021-01-01');
+      cy.get('input[name="dateFin"]').type('2022-01-01');
       cy.get(".next-btn").click();
     });
 

@@ -1,7 +1,10 @@
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
+
 export const client = new ApolloClient({
-    uri: 'http://localhost:8080/graphql',
+    uri: `${BACKEND_URL}/graphql`,
     cache: new InMemoryCache()
 })
 
@@ -188,4 +191,49 @@ export const getAllAnnuairesData = async () => {
         `
     })
     return response
+}
+
+
+export const getAllEffectifs = async (year) => {
+    const reponse = await client.query({
+        query: gql`
+            query getAllEffectifs($year: String!, $yearBefore: String!){
+                effectifsNow : contratsByDate(date: $year){
+                    typeContrat{
+                        libelle
+                    }
+                }
+
+                effectifsBefore : contratsByDate(date: $yearBefore){
+                    typeContrat{
+                        libelle
+                    }
+                }
+            }
+        `, variables: {year, yearBefore: year - 1}
+    })
+    return reponse;
+}
+
+export const getEffectifEmploye = async (year) => {
+    const reponse = await client.query({
+        query: gql`
+            query getEffectifEmploye($year: String!, $yearBefore: String!){
+                effectifsNow : effectifEmploye(date: $year){
+                    cdd
+                    cdi
+                    stage
+                    interim
+                }
+
+                effectifsBefore : effectifEmploye(date: $yearBefore){
+                    cdd
+                    cdi
+                    stage
+                    interim
+                }
+            }
+        `, variables: {year, yearBefore: year - 1}
+    })
+    return reponse;
 }

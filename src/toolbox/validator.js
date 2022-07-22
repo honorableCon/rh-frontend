@@ -14,6 +14,7 @@ export const personnelSchema = Joi.object({
     sexe: Joi.string()
         .required(),
     cni: Joi.string()
+        .length(19)
         .required(),
     nationalite: Joi.string()
         .required(),
