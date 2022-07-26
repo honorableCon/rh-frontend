@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
-const ToastSuccess = ({idPersonnel, message}) => {
-    const [close, setClose] = useState(false);
+const ToastSuccess = ({idPersonnel, message, closeMethod, isClose}) => {
+    const [close, setClose] = useState(isClose);
 
     const handleUndo = () => {
         console.log('delete ', idPersonnel);
@@ -9,6 +9,7 @@ const ToastSuccess = ({idPersonnel, message}) => {
 
     const handleClose = () => {
         setClose(true);
+        closeMethod();
     }
 
   return (

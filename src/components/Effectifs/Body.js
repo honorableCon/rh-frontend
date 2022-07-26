@@ -1,19 +1,16 @@
 import React from 'react'
 import ChartInterimaireEffectifs from '../Charts/ChartInterimaireEffectifs'
 import ChartPermanentEffectifs from '../Charts/ChartPermanentEffectifs'
-import ChartStagiaireEffectifs from '../Charts/ChartStagiaireEffectifs'
 
-const Body = ({effectifs}) => {
+const Body = () => {
   return (
     <div>
-        {/* effectifs total de l'etablissement */}
-        <div className="grid grid-cols-3 gap-4">
-            <div className="col-span-2">
-                <ChartInterimaireEffectifs effectifs={effectifs}/>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="col-span-1 lg:col-span-2">
+                <ChartInterimaireEffectifs/>
             </div>
-            <ChartPermanentEffectifs effectifs={effectifs}/>
+            <ChartPermanentEffectifs/>
         </div>
-        <ChartStagiaireEffectifs effectifs={effectifs}/>
     </div>
   )
 }

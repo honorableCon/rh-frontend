@@ -4,6 +4,18 @@ import DetailContrat from '../DetailsEmployee/DetailContrat';
 
 const Recap = ({inputs, usePage}) => {
     const personnel = inputs;
+    const contrat = { 
+        debutContrat: personnel.dateDebut, 
+        finContrat: personnel.dateFin,  
+        statut:{
+            libelle: personnel.status
+        },
+        typeContrat: {
+            libelle: personnel.typeContrats
+        }
+    };
+    const fonction = {libelle: personnel.fonctions};
+    const filiere = {libelle: personnel.filieres};
     const [page, setPage] = usePage;
     const handlePrevClick = () => setPage(--page);
 
@@ -18,7 +30,11 @@ const Recap = ({inputs, usePage}) => {
                     </div>
                     {/* <!-- Right Side --> */}
                     <div className="w-full mx-2 h-64">
-                        <DetailContrat personnel={personnel}/>
+                        <DetailContrat                         
+                            contrat={contrat}
+                            fonction={fonction}
+                            filiere={filiere}
+                        />
                         <div className="my-4"></div>
                     </div>
                 </div>

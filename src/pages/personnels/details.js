@@ -16,7 +16,7 @@ const Details = ({personnel}) => {
         <div className="flex flex-col container mx-auto my-5d p-5 gap-3">
             <div className="flex flex-col md:flex-row no-wrap md:-mx-2">
                 {/* <!-- Left Side --> */}
-                <div className="w-full md:w-3/12 md:mx-2 my-6">
+                <div className="w-full md:w-4/12 md:mx-2">
                     <ProfileCard 
                         personnel={personnel} 
                         contrat={personnel.contrats[0]}
@@ -25,7 +25,7 @@ const Details = ({personnel}) => {
                 </div>
 
                 {/* <!-- Right Side --> */}
-                <div className="flex flex-col md:flex-row justify-between w-full my-6 md:w-9/12 md:mx-2 gap-6">
+                <div className="flex flex-col lg:flex-row justify-between w-full my-6 md:mt-0 md:w-8/12 md:mx-2 gap-6">
                     <DetailAbout personnel={personnel}/>
                     <DetailContrat 
                         contrat={personnel.contrats[0]}
@@ -34,7 +34,7 @@ const Details = ({personnel}) => {
                     />
                 </div>
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-3 md:justify-center">
                 <button
                     type="button" 
                     className="previous-btn mr-4 text-white bg-primary-700 hover:bg-primary-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

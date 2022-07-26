@@ -51,10 +51,15 @@ const add = ({data}) => {
         setPage(1);
         return;
       }else{
+        setQueryResult({errors:null, success:false});
         addPersonnel(value).then( (res) => {
           setQueryResult({errors:null, success:true, personnelId:res.data.personnel.id});
         })
       }
+  }
+
+  const handleCloseSuccess = () =>{
+    console.log("close and go to annuaire");
   }
 
   return (
@@ -87,6 +92,8 @@ const add = ({data}) => {
         {success && <ToastSuccess 
             idPersonnel={personnelId}
             message="Personnel ajouté avec succès"
+            isClose={!success}
+            closeMethod={handleCloseSuccess}
           />
         }
         {errors && <ToastFailed/>}
