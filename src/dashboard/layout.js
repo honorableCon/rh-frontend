@@ -2,6 +2,7 @@ import Overlay from './provider/overlay';
 import TopNavigation from './topnavigation';
 import SideNavigation from './sidenavigation';
 import DashboardProvider from './provider/context';
+import { useRouter } from 'next/router';
 
 /*	w-[calc(100%-16rem)] class get the remain width of the main component from lg:viewport by subtracting
 (the total width by the width of the side navigation component which is w-64 = 16rem)*/
@@ -13,12 +14,18 @@ const style = {
 };
 
 export default function DashboardLayout({ children }) {
+  const { route } = useRouter();
+
+  if (route.includes('auth')) {
+    return <main className="h-screen">{children}</main>;
+  }
+
   return (
     <DashboardProvider>
       <div className={style.container}>
         <Overlay />
         <div className="flex items-start">
-          <SideNavigation mobilePosition="right" />
+          <SideNavigation mobilePosition="left" />
           <div className={style.mainContainer}>
             <TopNavigation />
             <main className={style.main}>{children}</main>

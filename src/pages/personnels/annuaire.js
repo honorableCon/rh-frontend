@@ -1,17 +1,17 @@
 import PersonnelList from '../../components/Personnel/PersonnelList';
 import SearchBar from '../../components/Personnel/SearchBar';
-import { getAllAnnuairesData } from '../../toolbox/graphql';
+import { getAllAnnuairesData } from '../../service/graphql';
 
-const Annuaire = ({filieres, personnels}) => {
+const Annuaire = ({ filieres, personnels }) => {
   return (
-    <div className='m-6 flex-row justify-center'>
+    <div className="m-6 flex-row justify-center">
       <div>
-        <SearchBar filieres={filieres}/>
-        <PersonnelList personnels={personnels}/>
+        <SearchBar filieres={filieres} />
+        <PersonnelList personnels={personnels} />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Annuaire;
 
@@ -22,6 +22,6 @@ export async function getServerSideProps() {
     props: {
       filieres: data.filieres,
       personnels: data.personnels,
-    }
-  }
+    },
+  };
 }
