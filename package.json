@@ -1,24 +1,14 @@
 {
-  "name": "dashboard-v8-nextjs",
+  "name": "rh-gmd",
   "version": "1.0.0",
   "author": {
-    "name": "Enoch Ndika"
+    "name": "Honorable Con"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/salvia-kit/dashboard-v8-nextjs.git"
+    "url": "https://github.com/honorableCon/rh-frontend.git"
   },
-  "keywords": [
-    "ui",
-    "react",
-    "components",
-    "dashboard",
-    "admin",
-    "tailwindcss",
-    "next",
-    "Next.js",
-    "layout"
-  ],
+  "keywords": [],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

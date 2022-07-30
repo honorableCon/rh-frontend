@@ -1,7 +1,10 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import { useToggle } from '../provider/context';
+import UserDropdown from './UserDropdown';
 
 export default function TopNavigation() {
+  const [dropdown, setDropdown] = useState(false);
   const { toggle } = useToggle();
   return (
     <header className="h-16 md:h-20 shadow bg-white items-center relative z-10">
@@ -18,7 +21,10 @@ export default function TopNavigation() {
               &#8801;
             </button>
           </div>
+
+          {/* right side */}
           <div className="flex items-center justify-end ml-5 mr-0 p-1 relative text-gray-700 w-full sm:mr-0 sm:right-auto">
+            {/* share icon */}
             <a href="#" className="block pr-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -35,22 +41,28 @@ export default function TopNavigation() {
                 />
               </svg>
             </a>
-            <Link href={"/personnels/ajouter"}><a className="block pr-5">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </a></Link>
+
+            {/* add icon */}
+            <Link href={'/personnels/ajouter'}>
+              <a className="block pr-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </a>
+            </Link>
+
+            {/* notification icon */}
             <a href="#" className="block pr-5 relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,9 +79,15 @@ export default function TopNavigation() {
                 />
               </svg>
             </a>
-            <a href="#" className="block relative">
+
+            {/* picture */}
+            <a
+              onClick={() => setDropdown(!dropdown)}
+              href="#"
+              className="block relative"
+            >
               <img
-                alt="Stone Cold Steve Austin"
+                alt="Dame Leye"
                 src="/images/profil.jpeg"
                 className="h-10  object-cover rounded-full w-10"
               />
@@ -77,6 +95,11 @@ export default function TopNavigation() {
           </div>
         </div>
       </div>
+      {dropdown && (
+        <div className="grid place-content-end m-2">
+          <UserDropdown />
+        </div>
+      )}
     </header>
   );
 }
