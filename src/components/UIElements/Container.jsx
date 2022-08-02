@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const Container = ({children}) => {
+const Container = ({ children }) => {
   return (
     <div className="p-6 flex flex-col justify-center min-w-0 break-words bg-white mb-6 shadow-lg rounded-xl">
-        {children}
+      {children}
     </div>
-  )
-}
+  );
+};
 
-export default Container
+export default Container;

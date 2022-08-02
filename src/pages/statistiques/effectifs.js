@@ -1,7 +1,7 @@
 import Effectifs from '../../components/Effectifs';
 
 const EffectifsPage = () => {
-  return <Effectifs/>
-}
+  return <Effectifs />;
+};
 
 export default EffectifsPage;

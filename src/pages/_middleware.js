@@ -7,10 +7,15 @@ const middleware = (req) => {
   const token = cookies.JWTtoken;
 
   if (token) {
-    if (verify(token, process.env.NEXT_PUBLIC_JWT_PUBLIC_KEY)) {
-      return req.url == loginPath
-        ? NextResponse.redirect('/')
-        : NextResponse.next(req);
+    try {
+      const decoded = verify(token, process.env.NEXT_PUBLIC_JWT_PUBLIC_KEY);
+      if (decoded) {
+        return req.url == loginPath
+          ? NextResponse.redirect('/')
+          : NextResponse.next(req);
+      }
+    } catch (err) {
+      return NextResponse.redirect(loginPath);
     }
   }
 

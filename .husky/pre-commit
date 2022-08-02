@@ -1,5 +1,8 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-yarn lint-staged
+# yarn lint-staged
+yarn format
+git add .
+npm run test:headless
 npm run build

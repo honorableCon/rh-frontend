@@ -1,12 +1,12 @@
-import React from 'react'
-import ChartCategoryChange from '../../components/Charts/ChartCategoryChange'
+import React from 'react';
+import ChartCategoryChange from '../../components/Charts/ChartCategoryChange';
 
 const promotionEffectuees = () => {
   return (
     <div>
-        <ChartCategoryChange/>
+      <ChartCategoryChange />
     </div>
-  )
-}
+  );
+};
 
-export default promotionEffectuees
+export default promotionEffectuees;

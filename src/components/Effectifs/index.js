@@ -4,10 +4,10 @@ import Body from '../../components/Effectifs/Body';
 const index = () => {
   return (
     <div className="grid gap-12">
-        <Header/>
-        <Body/>
+      <Header />
+      <Body />
     </div>
-  )
-}
+  );
+};
 
-export default index
+export default index;

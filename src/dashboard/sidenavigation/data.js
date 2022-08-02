@@ -9,8 +9,7 @@ const data = [
   {
     section: 'Documents',
     icon: <DocumentsIcon />,
-    content: [
-    ],
+    content: [],
   },
   {
     section: 'Statistiques',

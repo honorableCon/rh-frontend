@@ -11,9 +11,9 @@ function MyApp({ Component, pageProps }) {
         <title>Ressource humaine</title>
       </Head>
       <ApolloProvider client={client}>
-      <DashboardLayout>
-        <Component {...pageProps} />
-      </DashboardLayout>
+        <DashboardLayout>
+          <Component {...pageProps} />
+        </DashboardLayout>
       </ApolloProvider>
     </>
   );
