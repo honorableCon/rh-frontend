@@ -19,7 +19,7 @@ const middleware = (req) => {
     }
   }
 
-  if (req.url == loginPath) return NextResponse.next(req);
+  if (req.url == loginPath) return NextResponse.next();
 
   return NextResponse.redirect(loginPath);
 };
