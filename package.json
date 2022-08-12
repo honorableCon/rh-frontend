@@ -22,6 +22,7 @@
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@reach/portal": "^0.16.0",
+    "apexcharts": "^3.35.4",
     "axios": "^0.26.1",
     "cypress": "^10.3.0",
     "graphql": "^16.5.0",

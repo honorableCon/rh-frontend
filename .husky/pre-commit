@@ -4,5 +4,5 @@
 # yarn lint-staged
 yarn format
 git add .
-npm run test:headless
-npm run build
+# npm run test:headless
+# npm run build
