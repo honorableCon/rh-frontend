@@ -37,6 +37,7 @@ describe('Ajouter un personnel', () => {
 
   it('should display the success toast', () => {
     cy.get('button[type="submit"]').click();
+    cy.wait(3000);
     cy.get('#toast-success').contains('ajouté avec succès');
   });
 });

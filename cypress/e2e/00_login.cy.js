@@ -24,7 +24,7 @@ describe('Ajouter un personnel', () => {
     });
 
     it('should display the home page', () => {
-      cy.wait(3000);
+      cy.wait(5000);
       cy.get('h1').contains(
         'Direction des Resources Humaines et de la Communication',
       );
