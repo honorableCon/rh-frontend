@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ErrorHelper from '../../components/Form/ErrorHelper';
 import { login } from '../../service/login';
 import Logo from './assets/logo.png';
+import BackgroundImage from './assets/gmd-login-bg.jpeg';
 import { useRouter } from 'next/router';
 
 const Login = () => {
@@ -76,7 +77,10 @@ const Login = () => {
         </div>
       </div>
 
-      <div className="bg-login-image bg-cover bg-no-repeat"></div>
+      <div
+        style={{ backgroundImage: `url('${BackgroundImage.src}')` }}
+        className={`bg-cover bg-no-repeat`}
+      ></div>
     </div>
   );
 };
