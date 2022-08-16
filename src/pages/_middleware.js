@@ -19,9 +19,11 @@ const middleware = (req) => {
     }
   }
 
-  if (req.url == loginPath) return NextResponse.next();
-
-  return NextResponse.redirect(loginPath);
+  if (req.url == loginPath) {
+    return NextResponse.next();
+  } else {
+    return NextResponse.redirect(loginPath);
+  }
 };
 
 export default middleware;
