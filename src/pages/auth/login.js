@@ -78,8 +78,11 @@ const Login = () => {
       </div>
 
       <div
-        style={{ backgroundImage: `url('${BackgroundImage.src}')` }}
-        className={`bg-cover bg-no-repeat hidden lg:flex`}
+        style={{
+          backgroundImage: `url('${BackgroundImage.src}')`,
+          backgroundPosition: 'center',
+        }}
+        className={`bg-cover bg-no-repeat hidden md:flex`}
       ></div>
     </div>
   );
