@@ -1,18 +1,22 @@
 import { NextResponse } from 'next/server';
 import { verify } from 'jsonwebtoken';
 
-const middleware = (req) => {
+const config = {
+  matcher: '/',
+};
+const middleware = async (req) => {
   const loginPath = '/auth/login';
   const { cookies } = req;
   const token = cookies.JWTtoken;
+  const publicKey = process.env.NEXT_PUBLIC_JWT_PUBLIC_KEY;
 
   if (token) {
     try {
-      const decoded = verify(token, process.env.NEXT_PUBLIC_JWT_PUBLIC_KEY);
+      const decoded = verify(token, publicKey);
       if (decoded) {
         return req.url == loginPath
           ? NextResponse.redirect('/')
-          : NextResponse.next(req);
+          : NextResponse.next();
       }
     } catch (err) {
       return NextResponse.redirect(loginPath);
@@ -26,4 +30,4 @@ const middleware = (req) => {
   }
 };
 
-export default middleware;
+export { middleware, config };
