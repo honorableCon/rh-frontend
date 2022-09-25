@@ -24,9 +24,9 @@ const Login = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 h-full w-full">
+    <div className="grid md:grid-cols-2 h-full w-full">
       <div className="flex flex-col gap-6 justify-center items-center bg-gradient-to-r from-primary-500 to-secondary-700">
-        <div className="w-2/4 flex flex-col gap-5">
+        <div className="w-3/4 md:w-2/4 flex flex-col gap-5">
           <div width="100" height="100">
             <Image src={Logo} width="100" height="100" />
           </div>
@@ -47,7 +47,7 @@ const Login = () => {
                 type="email"
                 id="email"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                placeholder="name@flowbite.com"
+                placeholder="modou@gmd.sn"
                 required
               />
             </div>
@@ -79,7 +79,7 @@ const Login = () => {
 
       <div
         style={{ backgroundImage: `url('${BackgroundImage.src}')` }}
-        className={`bg-cover bg-no-repeat`}
+        className={`bg-cover bg-no-repeat hidden lg:flex`}
       ></div>
     </div>
   );
