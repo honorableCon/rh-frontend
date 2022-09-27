@@ -8,7 +8,7 @@ const Recap = ({ inputs, usePage }) => {
     debutContrat: personnel.dateDebut,
     finContrat: personnel.dateFin,
     statut: {
-      libelle: personnel.status,
+      libelle: personnel.statuts,
     },
     typeContrat: {
       libelle: personnel.typeContrats,
